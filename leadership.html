@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ananya Seeds - Leadership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Leadership page specific adjustments */
+        .lead-hero {
+            background: linear-gradient(rgba(26,83,25,0.4), rgba(26,83,25,0.7)), url('assets/bg_hero.jpg') no-repeat center/cover;
+            color: var(--color-white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .lead-hero h1 { font-size: 2.6rem; margin-bottom: 10px; }
+        .lead-hero p { max-width: 900px; margin: 0 auto; font-size: 1.05rem; }
+
+        .lead-team {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            padding: 0 20px 40px;
+        }
+
+        .leader-card {
+            background: var(--color-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            transition: transform 0.28s, box-shadow 0.28s;
+            text-align: left;
+        }
+        .leader-card:hover { transform: translateY(-10px); box-shadow: 0 16px 35px rgba(0,0,0,0.12); }
+
+        .leader-photo {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .leader-body {
+            padding: 20px;
+        }
+        .leader-body h3 { color: var(--color-primary); margin-bottom: 6px; }
+        .leader-body p.title { color: var(--color-secondary); font-weight: 700; margin-bottom: 10px; }
+        .leader-body p.bio { color: var(--color-text-dark); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px; }
+        .leader-footer { display:flex; justify-content: space-between; align-items: center; gap:10px; margin-top:8px; }
+
+        .values-section {
+            background-color: var(--color-light);
+            padding: 50px 20px;
+        }
+        .values-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            padding: 0 20px;
+        }
+        .value-card {
+            background: var(--color-white);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-secondary);
+        }
+        .value-card h4 { color: var(--color-primary); margin-bottom:8px; }
+        .value-card p { color: var(--color-text-dark); font-size:0.95rem; }
+
+        .lead-cta {
+            text-align:center;
+            padding: 40px 20px;
+            background-color: var(--color-white);
+        }
+
+        @media (max-width: 768px) {
+            .lead-hero h1 { font-size: 1.9rem; }
+            .leader-photo { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <div class="logo">ANANYA SEEDS <span style="color:var(--color-secondary);">Pvt. Ltd.</span></div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product_page.html">Products</a></li>
+                    <li><a href="r&d_quality.html">R&D & Quality</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="news_blog.html">News & Insights</a></li>
+                    <li class="nav-cta"><a href="index.html#contact" class="btn-primary">Become a Distributor</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="lead-hero">
+            <div class="container">
+                <h1>Leadership & Team</h1>
+                <p>Meet the people behind Ananya Seeds — a team of scientists, agronomists, and industry leaders committed to delivering climate-resilient, high-yielding hybrid seeds for sustainable agriculture.</p>
+            </div>
+        </section>
+
+        <!-- Featured Leader -->
+        <section class="section-content" style="background-color: var(--color-white); padding-top: 40px; padding-bottom: 0;">
+            <div class="container">
+                <h2 style="text-align:center; color: var(--color-primary); margin-bottom: 30px;">Featured Leader</h2>
+
+                <div class="leader-profile" style="max-width:1000px; margin:0 auto 40px; display:flex; gap:30px; align-items:center; flex-wrap:wrap;">
+                    <div class="leader-img-container" style="width:260px; height:260px; border-radius:50%; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.08); flex-shrink:0;">
+                        <img src="https://placehold.co/260x260/C6AA4C/1A5319/webp?text=Dr.+Pandey" alt="Dr. Lakshmikant Pandey" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+
+                    <div class="leader-info" style="flex:1; min-width:260px;">
+                        <h3>Dr. Lakshmikant Pandey</h3>
+                        <p class="title"><b>Managing Director & CEO</b> | <b>"The Seedman"</b></p>
+                        <p class="bio">With over 35 years of experience in seed science and agribusiness, Dr. Pandey leads Ananya Seeds with a clear focus on innovation, farmer prosperity, and climate-smart breeding. His leadership has driven the company's growth into a trusted provider of hybrid seeds across diverse agro-climatic regions.</p>
+                        <p class="quote" style="border-left:3px solid var(--color-secondary); padding-left:12px; font-style:italic; color:var(--color-text-dark);">"Our purpose is to deliver seeds that translate to stable incomes for farmers while protecting the environment."</p>
+                        <div style="margin-top:12px;">
+                            <a href="#" class="btn-secondary">View Full Profile</a>
+                            <a href="mailto:ceo@ananyaseeds.com" class="btn-primary" style="margin-left:10px;">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team Grid -->
+        <section class="section-content" style="padding-top: 10px; padding-bottom: 40px;">
+            <div class="container">
+                <h2 style="text-align:center; color: var(--color-primary); margin-bottom: 20px;">Leadership Team</h2>
+                <p style="text-align:center; max-width:900px; margin:0 auto 30px; color:var(--color-text-dark);">A cross-functional leadership team combining breeding expertise, R&D, supply-chain excellence, and farmer engagement.</p>
+
+                <div class="lead-team">
+                    <!-- Card 1 -->
+                    <div class="leader-card" id="leader-1" data-person-id="1">
+                        <img src="https://placehold.co/600x400/FF5733/FFFFFF/webp?text=Dr.+Agarwal" alt="Dr. Agarwal" class="leader-photo">
+                        <div class="leader-body">
+                            <h3>Dr. R. Agarwal</h3>
+                            <p class="title">Head of Breeding</p>
+                            <p class="bio">Leads hybrid development programs focusing on disease resistance and yield stability using modern breeding methodologies and marker-assisted selection.</p>
+                            <div class="leader-footer">
+                                <a href="#" class="btn-secondary">Profile</a>
+                                <span style="color:#888; font-size:0.9rem;">20+ yrs experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="leader-card" id="leader-2" data-person-id="2">
+                        <img src="https://placehold.co/600x400/298634/FFFFFF/webp?text=Ms.+Kaur" alt="Ms. Kaur" class="leader-photo">
+                        <div class="leader-body">
+                            <h3>Ms. Anjali Kaur</h3>
+                            <p class="title">Head of Agronomy & Field Ops</p>
+                            <p class="bio">Responsible for on-farm trials, multi-location testing and farmer outreach programs that ensure variety performance across regions.</p>
+                            <div class="leader-footer">
+                                <a href="#" class="btn-secondary">Profile</a>
+                                <span style="color:#888; font-size:0.9rem;">15+ yrs experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="leader-card" id="leader-3" data-person-id="3">
+                        <img src="https://placehold.co/600x400/583759/FFFFFF/webp?text=Mr.+Sharma" alt="Mr. Sharma" class="leader-photo">
+                        <div class="leader-body">
+                            <h3>Mr. Sunil Sharma</h3>
+                            <p class="title">Head of Quality & Compliance</p>
+                            <p class="bio">Oversees seed testing, batch traceability and regulatory compliance to guarantee rigorous quality standards from lab-to-field.</p>
+                            <div class="leader-footer">
+                                <a href="#" class="btn-secondary">Profile</a>
+                                <span style="color:#888; font-size:0.9rem;">18+ yrs experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="leader-card" id="leader-4" data-person-id="4">
+                        <img src="https://placehold.co/600x400/C6AA4C/1A5319/webp?text=Ms.+Das" alt="Ms. Das" class="leader-photo">
+                        <div class="leader-body">
+                            <h3>Ms. Nisha Das</h3>
+                            <p class="title">Head of Supply Chain</p>
+                            <p class="bio">Ensures timely delivery, storage best-practices and logistics coordination across the distribution network for seed viability preservation.</p>
+                            <div class="leader-footer">
+                                <a href="#" class="btn-secondary">Profile</a>
+                                <span style="color:#888; font-size:0.9rem;">12+ yrs experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="leader-card" id="leader-5" data-person-id="5">
+                        <img src="https://placehold.co/600x400/1A5319/FFFFFF/webp?text=Mr.+Khan" alt="Mr. Khan" class="leader-photo">
+                        <div class="leader-body">
+                            <h3>Mr. Imran Khan</h3>
+                            <p class="title">Head of Business Development</p>
+                            <p class="bio">Drives market strategy, partnerships and distributor relationships focused on expanding farmer access to high-performing hybrids.</p>
+                            <div class="leader-footer">
+                                <a href="#" class="btn-secondary">Profile</a>
+                                <span style="color:#888; font-size:0.9rem;">10+ yrs experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="leader-card" id="leader-6" data-person-id="6">
+                        <img src="https://placehold.co/600x400/FFB86B/1A5319/webp?text=Dr.+Verma" alt="Dr. Verma" class="leader-photo">
+                        <div class="leader-body">
+                            <h3>Dr. Meera Verma</h3>
+                            <p class="title">Head of Research Collaborations</p>
+                            <p class="bio">Manages external R&D collaborations, academic partnerships and technology transfer for next-generation seed traits.</p>
+                            <div class="leader-footer">
+                                <a href="#" class="btn-secondary">Profile</a>
+                                <span style="color:#888; font-size:0.9rem;">14+ yrs experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Values -->
+        <section class="values-section">
+            <div class="container">
+                <h2 style="text-align:center; color: var(--color-primary); margin-bottom:18px;">Our Leadership Values</h2>
+                <p style="text-align:center; max-width:900px; margin:0 auto 24px; color:var(--color-text-dark);">Guided by science, accountability, and a farmer-first approach — our leadership is committed to sustainable growth and measurable impact.</p>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h4>Science-Driven</h4>
+                        <p>Evidence-based breeding and rigorous testing guide every decision we make.</p>
+                    </div>
+                    <div class="value-card">
+                        <h4>Farmer-First</h4>
+                        <p>Product development centered on farmer profitability and real-field performance.</p>
+                    </div>
+                    <div class="value-card">
+                        <h4>Integrity</h4>
+                        <p>Transparent practices across quality, compliance and distribution.</p>
+                    </div>
+                    <div class="value-card">
+                        <h4>Sustainability</h4>
+                        <p>Innovating for climate resilience and environmental stewardship at scale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="lead-cta">
+            <div class="container">
+                <h3 style="margin-bottom:12px; color:var(--color-primary);">Connect with Our Leadership</h3>
+                <p style="max-width:800px; margin:0 auto 18px; color:var(--color-text-dark);">For partnerships, media, or speaking engagements, get in touch with our leadership team.</p>
+                <a href="mailto:ceo@ananyaseeds.com" class="btn-primary">Contact Leadership</a>
+                <a href="index.html#contact" class="btn-secondary" style="margin-left:12px;">Partner With Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Ananya Seeds</h4>
+                    <p>Sowing the Future: Quality Hybrid Seeds for a Sustainable Tomorrow.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="product_page.html">Products</a>
+                    <a href="index.html#leadership">Leadership Team</a>
+                    <a href="r&d_quality.html">Quality Assurance</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>Head Office: <a href="https://maps.app.goo.gl/fq8oRu2NWLjavC2c9" target="_blank">54, (3rd floor), 11th cross, KPC Layout, Kasavanahalli, Bangalore - 560035</a></p>
+                    <p>Email: <a href="mailto:ceo@ananyaseeds.com">ceo@ananyaseeds.com</a></p>
+                    <p>Phone: <a href="tel:+911712822028">91-1712822028</a></p>
+                </div>
+                <div>
+                    <h4>Stay Connected</h4>
+                    <ul class="social-links" style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;margin:0;">
+                        <li><a href="https://www.linkedin.com/in/drlkpandey/" target="_blank" rel="noopener">LinkedIn — @drikpandey</a></li>
+                        <li><a href="https://www.facebook.com/ananyaseedspvt.ltd" target="_blank" rel="noopener">Facebook — ananyaseeds</a></li>
+                        <li><a href="https://www.instagram.com/ananyaseeds/" target="_blank" rel="noopener">Instagram — @ananyaseeds</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Ananya Seeds Pvt. Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -20,6 +20,11 @@ body {
     color: var(--color-text-dark);
     line-height: 1.6;
     background-color: var(--color-white);
+    cursor: url('assets/cursor.png'), auto;
+}
+
+a, button, .btn-primary, .btn-secondary, .nav-toggle {
+    cursor: url('assets/cursor.png'), pointer;
 }
 
 a {
@@ -208,6 +213,12 @@ header {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {

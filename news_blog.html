@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya Seeds - News & Blog | Insights on Hybrid Seeds & Agriculture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* News & Blog Specific Styles */
+        .news-hero {
+            background: linear-gradient(rgba(26, 83, 25, 0.4), rgba(26, 83, 25, 0.7)), url('assets/bg_hero.jpg') no-repeat center center/cover;
+            color: var(--color-white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .news-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .news-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .news-card {
+            background-color: var(--color-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-card-body {
+            padding: 25px;
+        }
+
+        .news-category {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .news-card-body h3 {
+            color: var(--color-primary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .news-card-body p {
+            color: var(--color-text-dark);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .news-author {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .read-more {
+            color: var(--color-primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .sidebar {
+                display: block;
+            }
+
+            .news-container {
+                grid-template-columns: 1fr 280px;
+            }
+        }
+
+        .sidebar-widget {
+            background-color: var(--color-light);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-widget h4 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .sidebar-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-widget li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sidebar-widget li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-widget a {
+            color: var(--color-text-dark);
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar-widget a:hover {
+            color: var(--color-secondary);
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: var(--color-white);
+            border: 1px solid var(--color-secondary);
+            color: var(--color-primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px 5px 5px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-tag:hover, .category-tag.active {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .pagination a, .pagination span {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: all 0.3s;
+        }
+
+        .pagination a:hover, .pagination .active {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            border-color: var(--color-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .news-hero h1 {
+                font-size: 2rem;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">ANANYA SEEDS <span style="color:var(--color-secondary);">Pvt. Ltd.</span></div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product_page.html">Products</a></li>
+                    <li><a href="r&d_quality.html">R&D & Quality</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="news_blog.html">News & Insights</a></li>
+                    <li class="nav-cta"><a href="index.html#contact" class="btn-primary">Become a Distributor</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="news-hero">
+            <div class="container">
+                <h1>News & Insights</h1>
+                <p>Stay updated with the latest developments in hybrid seeds, agricultural innovations, and success stories from our farming partners.</p>
+            </div>
+        </section>
+
+        <section class="section-content" style="background-color: var(--color-white); padding: 60px 20px;">
+            <div class="news-container">
+                <div>
+                    <div class="news-grid">
+                        <!-- News Card 1 -->
+                        <article class="news-card" data-news-id="1">
+                            <img src="https://placehold.co/400x200/1A5319/FFFFFF/webp?text=Climate+Resilience" alt="Climate Resilience News" class="news-card-image">
+                            <div class="news-card-body">
+                                <span class="news-category">Research</span>
+                                <h3>Climate-Resilient Hybrids: Ananya Seeds Leads Innovation</h3>
+                                <div class="news-meta">
+                                    <span class="news-author">Dr. Lakshmikant Pandey</span>
+                                    <span>Nov 10, 2025</span>
+                                </div>
+                                <p>Ananya Seeds announces breakthrough in developing hybrid varieties that withstand extreme weather conditions, offering Indian farmers reliable yields despite climate volatility.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <!-- News Card 2 -->
+                        <article class="news-card" data-news-id="2">
+                            <img src="https://placehold.co/400x200/C6AA4C/FFFFFF/webp?text=Farmer+Success" alt="Farmer Success Story" class="news-card-image">
+                            <div class="news-card-body">
+                                <span class="news-category">Success Story</span>
+                                <h3>From Struggles to 40% Higher Yields: A Farmer's Journey</h3>
+                                <div class="news-meta">
+                                    <span class="news-author">Community Team</span>
+                                    <span>Nov 5, 2025</span>
+                                </div>
+                                <p>Meet Rajesh, a farmer from Maharashtra who switched to Ananya's stress-tolerant tomato hybrid and witnessed a remarkable transformation in his crop performance and income.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <!-- News Card 3 -->
+                        <article class="news-card" data-news-id="3">
+                            <img src="https://placehold.co/400x200/FF5733/FFFFFF/webp?text=Product+Launch" alt="New Product Launch" class="news-card-image">
+                            <div class="news-card-body">
+                                <span class="news-category">Product Launch</span>
+                                <h3>Introducing: Green Globe 2.0 - Advanced Cabbage Hybrid</h3>
+                                <div class="news-meta">
+                                    <span class="news-author">Product Team</span>
+                                    <span>Oct 28, 2025</span>
+                                </div>
+                                <p>Experience superior uniformity, enhanced disease resistance, and higher market value with our latest cabbage hybrid, engineered for Indian agro-climatic zones.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <!-- News Card 4 -->
+                        <article class="news-card" data-news-id="4">
+                            <img src="https://placehold.co/400x200/298634/FFFFFF/webp?text=Agronomy+Guide" alt="Agronomy Guide" class="news-card-image">
+                            <div class="news-card-body">
+                                <span class="news-category">Agronomy</span>
+                                <h3>Maximizing Tomato Yields: A Complete Cultivation Guide</h3>
+                                <div class="news-meta">
+                                    <span class="news-author">Agronomy Experts</span>
+                                    <span>Oct 20, 2025</span>
+                                </div>
+                                <p>Learn proven techniques for soil preparation, irrigation schedules, pest management, and harvesting to achieve optimal yields with Ananya hybrid tomato seeds.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <!-- News Card 5 -->
+                        <article class="news-card" data-news-id="5">
+                            <img src="https://placehold.co/400x200/583759/FFFFFF/webp?text=Sustainability" alt="Sustainability Initiative" class="news-card-image">
+                            <div class="news-card-body">
+                                <span class="news-category">Sustainability</span>
+                                <h3>Building a Greener Future: Ananya's Sustainability Roadmap</h3>
+                                <div class="news-meta">
+                                    <span class="news-author">Sustainability Team</span>
+                                    <span>Oct 12, 2025</span>
+                                </div>
+                                <p>Discover how Ananya Seeds is committed to reducing its environmental footprint while promoting regenerative agriculture practices across partner farms.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <!-- News Card 6 -->
+                        <article class="news-card" data-news-id="6">
+                            <img src="https://placehold.co/400x200/C6AA4C/1A5319/webp?text=Industry+Awards" alt="Industry Awards" class="news-card-image">
+                            <div class="news-card-body">
+                                <span class="news-category">Awards</span>
+                                <h3>Ananya Seeds Wins 'Best Seed Innovation Award' 2025</h3>
+                                <div class="news-meta">
+                                    <span class="news-author">Press Release</span>
+                                    <span>Sep 30, 2025</span>
+                                </div>
+                                <p>Recognized for groundbreaking contributions to agricultural innovation and farmer empowerment at the National Seed Conference in New Delhi.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <span class="active">1</span>
+                        <a href="#page=2">2</a>
+                        <a href="#page=3">3</a>
+                        <a href="#page=2">Next →</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h4>Categories</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                            <span class="category-tag active">All</span>
+                            <span class="category-tag">Research</span>
+                            <span class="category-tag">Success Stories</span>
+                            <span class="category-tag">Product Launch</span>
+                            <span class="category-tag">Agronomy</span>
+                            <span class="category-tag">Sustainability</span>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h4>Recent Posts</h4>
+                        <ul>
+                            <li><a href="#">Climate-Resilient Hybrids: Innovation Update</a></li>
+                            <li><a href="#">Farmer Success: 40% Yield Improvement</a></li>
+                            <li><a href="#">Green Globe 2.0 Launch Event</a></li>
+                            <li><a href="#">Tomato Cultivation Best Practices</a></li>
+                            <li><a href="#">Sustainability Report Q3 2025</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar-widget">
+                        <h4>Newsletter</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--color-text-dark);">Get the latest updates on seeds, agriculture, and farming insights delivered to your inbox.</p>
+                        <input type="email" placeholder="Enter your email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; font-family: var(--font-main);">
+                        <button class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Subscribe</button>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Ananya Seeds</h4>
+                    <p>Sowing the Future: Quality Hybrid Seeds for a Sustainable Tomorrow.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="product_page.html">Products</a>
+                    <a href="index.html#leadership">Leadership Team</a>
+                    <a href="r&d_quality.html">Quality Assurance</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>Head Office: <a href="https://maps.app.goo.gl/fq8oRu2NWLjavC2c9" target="_blank">54, (3rd floor), 11th cross, KPC Layout, Kasavanahalli, Bangalore - 560035</a></p>
+                    <p>Email: <a href="mailto:ceo@ananyaseeds.com">ceo@ananyaseeds.com</a></p>
+                    <p>Phone: <a href="tel:+911712822028">91-1712822028</a></p>
+                </div>
+                <div>
+                    <h4>Stay Connected</h4>
+                    <ul class="social-links" style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;margin:0;">
+                        <li>
+                            <a href="https://www.linkedin.com/in/drlkpandey/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden focusable="false" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2.5" y="2.5" width="19" height="19" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M7.5 10.5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    <circle cx="7.5" cy="7.5" r="1.2" fill="currentColor"/>
+                                    <path d="M11.5 18V13.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>LinkedIn</strong> — @drikpandey</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/ananyaseedspvt.ltd" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden focusable="false" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M15 8h-2c-.552 0-1 .448-1 1v2h3l-.5 3h-2.5v7h-3v-7H8v-3h2v-2c0-2.206 1.794-4 4-4h2v3z" fill="currentColor"/>
+                                </svg>
+                                <span><strong>Facebook</strong> ananyaseeds</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/ananyaseeds/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:inherit;text-decoration:none;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden focusable="false" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM16.5 7.5a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z" fill="currentColor"/>
+                                </svg>
+                                <span><strong>Instagram: </strong>@ananyaseedspvtltd</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Ananya Seeds Pvt. Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

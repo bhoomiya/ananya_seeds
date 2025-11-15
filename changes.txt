@@ -1,25 +1,23 @@
-## Session Changes - November 13, 2025
+## Session Changes - November 15, 2025
 
-### CSS Enhancements
-- Added custom cursor support: cursor: url('assets/cursor.png'), auto; for body and interactive elements
-- Updated .product-card with hover animation: translateY(-10px) and enhanced box-shadow for elevation effect
+### Hamburger menu 
+- Corrected Hamburger Menu
+- 
 
 ### Product Page Updates
-- Expanded product_page.html products grid from 3 to 9 cards (repeating 3 product variations 3 times)
-- Added pagination buttons template (Previous/Next navigation for multi-page product listing)
-- Suggested product ID implementation with data-product-id attributes for tracking
+- Images uploaded
+- Description 
+- Layout correction
 
-### New Pages Created
-- leadership.html: Complete leadership page featuring Dr. Lakshmikant Pandey (CEO), 6-member leadership team grid, company values section, and contact CTA
-- r&d_quality.html: Comprehensive R&D & Quality page with 5-step R&D timeline, quality assurance standards (6 cards), lab facilities, international certifications, and farmer testimonials
-- news_blog.html: Full news & blog page with hero section, 6 sample news cards with categories, sidebar widgets (categories filter, recent posts, newsletter signup), and pagination
+### Blog Page Layout
+- Leadership page transformed
+- content creation
 
-### Styling Applied to New Pages
-- Consistent color scheme using CSS variables (primary green, gold accent, light background)
-- Responsive grid layouts with hover effects on cards
-- Hero sections with gradient overlays matching site branding
-- Mobile-first responsive breakpoints for tablets and phones
+### R&D Page Layout
+- Created R&D page Layout
+- content creation
 
-### Navigation Updates
-- All new pages include updated navbar linking to: Home, Products, R&D & Quality, Leadership, News & Insights, and CTA button
-- Footer consistent across all pages with social links and contact information
+### Styling correction for pages
+- 
+### Footer Updates
+- corrected Links

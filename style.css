@@ -225,15 +225,38 @@ header {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
 }
 
 .product-card-body {
     padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-card-body h3 {
+    transform: scale(1.08);
+    color: var(--color-secondary);
+}
+
+.product-card:hover .product-card-body p {
+    transform: scale(1.05);
+    font-weight: 500;
 }
 
 .product-card-body h3 {
     color: var(--color-primary);
     margin-bottom: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    transform-origin: left center;
+}
+
+.product-card-body p {
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+    transform-origin: left center;
 }
 
 /* Leadership Profile */
@@ -321,6 +344,47 @@ footer a:hover {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.8rem;
+}
+
+/* --- LIGHTBOX MODAL --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 /* --- RESPONSIVENESS (MOBILE-FIRST) --- */
